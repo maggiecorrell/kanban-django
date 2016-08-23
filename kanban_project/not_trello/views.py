@@ -48,4 +48,4 @@ class LogoutView(View):
 
     def get(self, request, *args, **kwargs):
         auth_logout(request)
-        return HttpResponseRedirect(settings.LOGOUT_REDIRECT_URL)
+        return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
