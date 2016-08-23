@@ -9,8 +9,11 @@ urlpatterns = [
             template_name='register.html',
             form_class=UserCreationForm,
             success_url='/'
-    ))]
-    # url(r'^logout/', views.LogoutView.as_view(), name='logout'),
-    # url(r'^login/$', views.LoginView.as_view(), name='login'),
-    # url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
-    # ]
+
+    )),
+    url(r'^logout/$', views.LogoutView.as_view(), name='logout'),
+    url(r'^login/$', views.LoginView.as_view(), name='login')
+    ]
+
+# url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
+# ]
