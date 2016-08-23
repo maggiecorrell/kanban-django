@@ -1,3 +1,4 @@
 secrets.py
 .direnv/
 .envrc
+*.pyc
