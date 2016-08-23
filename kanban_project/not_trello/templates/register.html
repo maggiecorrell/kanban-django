@@ -1,5 +1,8 @@
 {% extends 'index.html' %}
-
-{% block title %} Register {% end block %}
-
+{% block body %}
+<form method=POST>
+{% csrf_token %}
 {{ form.as_p }}
+<button>Submit</button>
+</form>
+{% endblock %}
