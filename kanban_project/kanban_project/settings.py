@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'not_trello.apps.NotTrelloConfig'
+    'not_trello.apps.NotTrelloConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,11 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
 ]
-
-REST_FRAMEWORK = {
-    'DEFAULT_PREMISSION_CLASSES': ('rest_framework.premissions.AllowAny',),
-    'PAGE_SIZE': 10
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
