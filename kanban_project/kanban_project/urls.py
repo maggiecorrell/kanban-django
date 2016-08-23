@@ -4,6 +4,7 @@ from not_trello import views
 from django.contrib import admin
 
 router = routers.DefaultRouter()
+router.register(r'Board', views.BoardViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
