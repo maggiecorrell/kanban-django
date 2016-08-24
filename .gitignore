@@ -2,6 +2,6 @@ secrets.py
 .direnv
 .envrc
 *.pyc
-.env
 __pycache__
 .DS_Store
+.env
