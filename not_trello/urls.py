@@ -14,7 +14,7 @@ urlpatterns = [
 
     ), name='register'),
     url(r'^login/$', login, name='login'),
-    url(r'^logout/$', logout, {'next_page': '/login'})
+    url(r'^logout/$', logout, {'next_page': '/login'}, name='logout')
     ]
 
 # url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
