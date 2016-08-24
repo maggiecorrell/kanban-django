@@ -1,7 +1,7 @@
 var $not_trello = $('#board_name')
 
 $ajax({
-  url: '/api/Board'
+  url: '/api/board'
 }).click(function(){
 
 })
