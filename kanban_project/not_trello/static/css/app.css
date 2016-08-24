@@ -1,21 +1,19 @@
 h1 {
-  padding: 100px 0px 30px 40px;
-  color: #4D4D4D;
+    color: #4D4D4D;
+    padding-top: 100px;
+    padding-bottom: 25px;
 }
-
 .btn .btn-success {
-  background-color: #5BAE45;
-  color: #FFF;
-  box-shadow: 20px 10px 30px #3F6F21;
-  font-size: 30px;
+    background-color: #5BAE45;
+    color: #FFF;
+    box-shadow: 20px 10px 30px #3F6F21;
+    font-size: 30px;
 }
-
 .google_btn {
-  padding-top: 50px;
-  padding-bottom: 30px;
-  font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-size: 20px;
 }
-
 .login_button {
-  color: #99999F;
+    color: #99999F;
 }
