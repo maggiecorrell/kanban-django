@@ -19,5 +19,6 @@ def index(request):
 
 
 class BoardViewSet(viewsets.ModelViewSet):
+    template_name = 'index.html'
     serializer_class = BoardSerializer
     queryset = Board.objects.all().order_by('name')
