@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from . import views
 from .views import BoardViewSet
 from django.views.generic.edit import CreateView
@@ -14,8 +14,7 @@ urlpatterns = [
 
     ), name='register'),
     url(r'^login/$', login, name='login'),
-    url(r'^logout/$', logout, {'next_page': '/login'}),
-    url(r'^board/$', BoardViewSet, name='board')
+    url(r'^logout/$', logout, {'next_page': '/login'})
     ]
 
 # url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
