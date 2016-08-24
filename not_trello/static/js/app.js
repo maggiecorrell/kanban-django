@@ -9,7 +9,7 @@ $.ajax({
       // make a table row
       var $tr = $('<tr>')
 
-      var $name = $('<td>').text(result.name).appendTo($tr)
+      var $status = $('<td>').text(result.name).appendTo($tr)
 
       $('<td>').text(result.categories).appendTo($tr)
 
