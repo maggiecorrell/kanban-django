@@ -105,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LOGIN_URL = reverse_lazy('login')
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'index/'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/login'
+LOGIN_URL = ''
 
 
 # Internationalization

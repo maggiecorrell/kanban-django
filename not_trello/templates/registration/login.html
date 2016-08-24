@@ -5,9 +5,14 @@
     <div class="col-md-4"></div>
       <div class="col-md-4">
         <form method="post" action="{% url 'login' %}">
-            <h1> Login to Not Trello </h1> {% csrf_token %} {{ form.as_p }}
+            <h1> Login to Not Trello </h1>
+            {% csrf_token %}
+            {{ form.as_p }}
             <input class="btn btn-success" type="submit" value="Login" />
         </form>
+        <div class="login_button">
+          <p> Don&#146;t already have an account?<a href="{% url 'register' %}" class="btn btn-link"> Create an account.</a></p>
+        </div>
       </div>
     </div>
 
