@@ -1,16 +1,27 @@
 {% extends 'base/base.html' %}
 
 {% block body %}
-
-<form method=POST>
-  <div class="container">
-    <h2> Register for Not Trello </h2>
-    <div class="col-sm 3.col-md-8">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button>Create New Account</button>
+<div class="container">
+  <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form method=POST>
+          <h1> Register for Not Trello </h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+          <button class="btn btn-success">Create New Account</button>
+        </form>
+        <div class="google_btn">
+        <p> Do you have a Google account?</p>
+        <button class="btn btn-success">Sign up with Google</button>
+      </div>
+      <div class="login_button">
+        <p> Already have an account?<a href="{% url 'login' %}" class="btn btn-link"> Log in.</a></p>
+      </div>
+        </div>
     </div>
   </div>
-</form>
+
+
+
 
 {% endblock %}
