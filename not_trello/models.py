@@ -4,8 +4,8 @@ from django.db import models
 # Create your models here.
 class Card(models.Model):
     activity = models.CharField(max_length=500)
-    description = models.TextField()
-    status = models.CharField(max_length=200)
+    # description = models.TextField()
+    # status = models.CharField(max_length=200)
     # who_created = models.CharField(max_length=35)
     # when_created = models.DateTimeField(auto_now_add=True)
     # who_updated = models.CharField(max_length=35)
