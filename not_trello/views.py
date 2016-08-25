@@ -3,7 +3,7 @@ from .serializers import BoardSerializer, CategorySerializer, CardSerializer
 from rest_framework import viewsets
 from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
-from .models import Board, Card, Category
+from .models import Board  # Card, Category
 
 
 @login_required
