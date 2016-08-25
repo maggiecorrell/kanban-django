@@ -51,4 +51,16 @@ $.ajax({
     })
   }
 })
+$.(function(){
+    var counter = 1;
+    $.('a.add-task').click(function(event){
+        event.preventDefault();
+
+        var newRow = $.('<tr><th><input type="text" activity="activity' +
+            counter + '"/></th></tr>');
+            counter++;
+        $.('btn2').append(newRow);
+
+    });
+});
 </script>

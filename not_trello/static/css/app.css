@@ -17,3 +17,6 @@ h1 {
 .login_button {
     color: #99999F;
 }
+#clickableAwesomeFont {
+     cursor: pointer
+}
