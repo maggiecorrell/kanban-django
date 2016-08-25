@@ -1,4 +1,3 @@
-<script>
 var $doing = $('#doing');
 var $BTN1 = $('#export-btn-1');
 var $done = $('#done');
@@ -10,53 +9,35 @@ var $BTN4 = $('#export-btn-4');
 var $save = $('#save')
 
 $.ajax({
-  url: '/api/Board'
+  url: '/api/Card'
 })
 
-$('.table-add').click(function () {
-  var $clone = $done.find('#hide1').clone(true).removeClass('hide table-line');
-  $done.find('table').append($clone);
-});
-$('.table-add').click(function () {
-  var $clone = $doing.find('#hide2').clone(true).removeClass('hide table-line');
-  $doing.find('table').append($clone);
-});
-$('.table-add').click(function () {
-  var $clone = $todo.find('#hide3').clone(true).removeClass('hide table-line');
-  $todo.find('table').append($clone);
-});
-$('.table-add').click(function () {
-  var $clone = $blocked.find('#hide4').clone(true).removeClass('hide table-line');
-  $blocked.find('table').append($clone);
+$($BTN1).click(function(){
+  var $clone = $done.find('#hide1').clone(true).removeClass('hide');
+  $done.find('table1').append($clone);
 });
 
+$($BTN2).click(function(){
+  var $clone = $doing.find('#hide2').clone(true).removeClass('hide');
+  $doing.find('table2').append($clone);
+});
 
-// A few jQuery helpers for exporting only
-jQuery.fn.pop = [].pop;
-jQuery.fn.shift = [].shift;
+$($BTN3).click(function(){
+  var $clone = $todo.find('#hide3').clone(true).removeClass('hide');
+  $todo.find('table3').append($clone);
+});
+$($BTN4).click(function(){
+  var $clone = $blocked.find('#hide4').clone(true).removeClass('hide');
+  $blocked.find('table4').append($clone);
+});
 
-$save.click(function () {
-  var $rows = $doing.find('tr:not(:hidden)');
-  var headers = [];
-  var data = [];
-
-  // Get the headers (add special header logic here)
-  $($rows.shift()).find('th:not(:empty)').each(function () {
-    headers.push($(this).text().toLowerCase());
-  });
-
-  // Turn all existing rows into a loopable array
-  $rows.each(function () {
-    var $td = $(this).find('td');
-    var h = {};
-
-    // Use the headers from earlier to name our hash keys
-    headers.forEach(function (header, i) {
-      h[header] = $td.eq(i).text();
-    });
-
-    data.push(h);
-  });
-
-
-</script>
+// var $content1 = $('#content1');
+//
+// $('#save').on('click', function(){
+//   var editedContent   = $content1.html();
+//   localStorage.newContent = editedContent;
+// });
+//
+// if(localStorage.getItem('newContent')) {
+//   theContent.html(localStorage.getItem('newContent'));
+// }
