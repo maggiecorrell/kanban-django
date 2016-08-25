@@ -14,13 +14,13 @@ def index(request):
 class BoardViewSet(viewsets.ModelViewSet):
     serializer_class = BoardSerializer
     queryset = Board.objects.all().order_by('name')
-#
-#
-# class CategoryViewSet(viewsets.ModelViewSet):
-#     serializer_class = CategorySerializer
-#     queryset = Category.objects.all()
-#
-#
-# class CardViewSet(viewsets.ModelViewSet):
-#     serializer_class = CardSerializer
-#     queryset = Card.objects.all()
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
+
+
+class CardViewSet(viewsets.ModelViewSet):
+    serializer_class = CardSerializer
+    queryset = Card.objects.all()
