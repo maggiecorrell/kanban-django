@@ -4,9 +4,9 @@ from not_trello import views
 from django.contrib import admin
 
 router = routers.DefaultRouter()
-router.register(r'Board', views.BoardViewSet)
-router.register(r'Card', views.BoardViewSet)
-router.register(r'Category', views.BoardViewSet)
+router.register(r'board', views.BoardViewSet)
+router.register(r'card', views.CardViewSet)
+router.register(r'category', views.CategoryViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
