@@ -11,8 +11,10 @@ def index(request):
     user = request.user
 
     if request.POST:
-        board_name = request.POST.get('name', '')
+        board_name = request.POST.get('board-name', '')
         board = Board(name=board_name)
+        board.save()
+        board.user.add(user)
         board.save()
 
     boards = Board.objects.filter(user=user)
