@@ -14,11 +14,11 @@ class Card(models.Model):
 
 
 class Category(models.Model):
-    cards = models.ForeignKey(Card, on_delete=models.CASCADE)
+    cards = models.ForeignKey(Card, blank=True, null=True)
     name = models.CharField(max_length=100)
 
 
 class Board(models.Model):
     name = models.CharField(max_length=500)
     user = models.ManyToManyField(User)
-    categories = models.ForeignKey(Category, on_delete=models.CASCADE)
+    categories = models.ForeignKey(Category, blank=True, null=True)
