@@ -15,6 +15,7 @@ class Card(models.Model):
 
 class Category(models.Model):
     cards = models.ForeignKey(Card, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
 
 
 class Board(models.Model):

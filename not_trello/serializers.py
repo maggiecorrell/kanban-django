@@ -10,12 +10,16 @@ class CardSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    cards_set = CardSerializer(many=True, read_only=True)
+
     class Meta:
         model = Category
-        fields = ('id', 'cards',)
+        fields = ('id', 'cards_set', 'name')
 
 
 class BoardSerializer(serializers.ModelSerializer):
+    categories_set = CategorySerializer(many=True, read_only=True)
+
     class Meta:
         model = Board
-        fields = ('id', 'name', 'user', 'categories')
+        fields = ('id', 'name', 'user', 'categories_set')
