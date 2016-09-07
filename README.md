@@ -1,31 +1,55 @@
-# Project Name
+# kanban-django
 
-TODO: Write a project description
+Django REST Framework + Ajax
+
+Create a REST API backend and Ajax frontend.
+
 
 ## Installation
 
-TODO: Describe the installation process
+'pip install -r requirements.txt' in your command line
 
 ## Usage
 
-TODO: Write usage instructions
+A requirements.txt file.
+A Django project.
+
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+- Maggie Correll: https://github.com/maggiecorrell
+- Tara Davis: https://github.com/tarakdavis
+- Andrew Musicant: https://github.com/andrewmusicant
 
-## History
 
-TODO: Write history
+## Objectives
 
-## Credits
+Summarize the REST architecture.
+Design and build a REST API.
+Design and build a data-driven JavaScript UI with Ajax.
 
-TODO: Write credits
+Build a Trello clone using Django REST Framework and Ajax in JavaScript.
 
-## License
+### Build a REST API
 
-TODO: Write license
+First, using the Django REST Framework, build an API with one resource: tasks.
+
+URLs are nested under /api/. Create an API with the following endpoints:
+
+- GET /api/tasks/
+- POST /api/tasks/
+- PUT /api/tasks/{id}
+- DELETE /api/tasks/{id}
+
+The task resource includes the following fields:
+id, title, status, priority
+
+### Build a UI
+
+Built a user interface with HTML, CSS, and JavaScript that works with the Django REST API using Ajax.
+
+### Able to do all of the following via Ajax...
+
+- Create a user and login.
+- Create/edit/delete tasks.
+- Re-prioritize tasks.
