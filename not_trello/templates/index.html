@@ -1,3 +1,22 @@
 {% extends 'base/base.html' %}
+
 {% block title %}{% endblock %}
-{% block body %}{% endblock %}
+
+
+{% block body %}
+<body>
+<div class="container">
+  <form class="form-inline" action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <input type="text" name="board-name" class="form-control" id="board" placeholder="New Board Name">
+    </div>
+    <button class="btn btn-default" type="submit">Create!</button>
+  </form>
+  <ul>
+  {% for board in boards %}
+    <li class="list-group-item">{{ board.name }}</li>
+  {% endfor %}</ul>
+</div>
+</body>
+{% endblock %}

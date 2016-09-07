@@ -15,7 +15,8 @@ urlpatterns = [
     ), name='register'),
     url(r'^$', login, name='login'),
     url(r'^login/$', login, name='login'),
-    url(r'^logout/$', logout, {'next_page': '/login'}, name='logout')
+    url(r'^logout/$', logout, {'next_page': '/login'}, name='logout'),
+    url(r'^board/(?P<pk>[0-9]+)', views.board, name='board')
     ]
 
 # url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
