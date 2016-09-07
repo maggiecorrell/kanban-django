@@ -4,3 +4,4 @@ secrets.py
 *.pyc
 __pycache__
 .DS_Store
+.env
