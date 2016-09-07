@@ -9,7 +9,15 @@ var $BTN4 = $('#export-btn-4');
 var $save = $('#save')
 
 $.ajax({
-  url: '/api/Card'
+  url: '/api/card'
+})
+
+$.ajax({
+  url: '/api/board'
+})
+
+$.ajax({
+  url: '/api/category'
 })
 
 $($BTN1).click(function(){
