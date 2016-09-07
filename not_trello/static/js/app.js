@@ -1,15 +1,6 @@
 var $save = $('#save')
 
-$.ajax({
-  url: '/api/card'
-})
-
-$.ajax({
-  url: '/api/category'
-})
-
-
-$input.appendTo($form)
+// $input.appendTo($form)
 
    $form.submit((function (x) {
     var $board = {
@@ -22,9 +13,9 @@ $input.appendTo($form)
         url: "api/board",
         contentType: "application/json"
     });
-});
+  }));
 
-$input.appendTo($form)
+// $input.appendTo($form)
 
    $form.submit((function (y) {
     var $cat = {
@@ -37,9 +28,9 @@ $input.appendTo($form)
         url: "api/category",
         contentType: "application/json"
     });
-});
+}));
 
-$input.appendTo($form)
+// $input.appendTo($form)
 
    $form.submit((function (z) {
     var $card = {
@@ -51,4 +42,4 @@ $input.appendTo($form)
         url: "api/card",
         contentType: "application/json"
     });
-});
+}));
