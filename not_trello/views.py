@@ -8,7 +8,7 @@ from .models import Board, Card, Category
 
 # @login_required
 def index(request):
-    return render(request, 'board.html')
+    return render(request, 'index.html')
 
 
 class BoardViewSet(viewsets.ModelViewSet):
@@ -24,3 +24,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class CardViewSet(viewsets.ModelViewSet):
     serializer_class = CardSerializer
     queryset = Card.objects.all()
+
+
+def board(request):
+    pass
