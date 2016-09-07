@@ -6,14 +6,26 @@ from django.contrib.auth.decorators import login_required
 from .models import Board, Card, Category
 
 
-# @login_required
+@login_required
 def index(request):
-    return render(request, 'index.html')
+    user = request.user
+
+    if request.POST:
+        board_name = request.POST.get('name', '')
+        board = Board(name=board_name)
+        board.save()
+
+    boards = Board.objects.filter(user=user)
+    context = {
+        'boards': boards
+    }
+
+    return render(request, 'index.html', context)
 
 
 class BoardViewSet(viewsets.ModelViewSet):
     serializer_class = BoardSerializer
-    queryset = Board.objects.all().order_by('name')
+    queryset = Board.objects.all()
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
