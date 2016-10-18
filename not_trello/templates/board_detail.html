@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+<head>{% block title %}{% endblock %}</head>
+{% block body %}
+<body>
+
+<div class="container">
+  <h2> {{ board.name }} </h2>
+  <form class="form-inline" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    <input type="text" name="category-name" class="form-control" id="category" placeholder="New Category Name">
+    <button type="submit" name="button" class="btn btn-default">Create!</button>
+  </div></form>
+
+
+  {% for category in categories %}
+<div class="card">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2>{{ category.name }}</h2>
+        <button type="submit" id="delete-button" class="btn btn-danger btn-sm pull-xs-right" name="delete-classifier" value="{{ board_id }}">X</button>
+    </form>
+            </div>
+        </div>{% endfor %}
+
+
+
+
+</div>
+</div>
+
+  <div class ="container">
+    <div class="col-md-3">
+      <div id="table1" class="table-editable">
+        <table id="done" class="table table-bordered">
+          <th>
+            done
+          </th>
+          <tr>
+            <td id="content1" contenteditable="true">task</td>
+            <span id='clickableAwesomeFont'>Enter a new task..
+                <i id="export-btn-1" type="submit" class="icon-plus-sign"></i>
+            </span>
+          </tr>
+        <tr id="hide1" class="hide">
+        <td contenteditable="true">task</td>
+      </tr>
+      </table>
+    </div>
+    <a id='save' type='submit' class="btn btn-primary btn-sm">Save Changes</a>
+  </div>
+
+  </div>
+</body>
+{% endblock %}

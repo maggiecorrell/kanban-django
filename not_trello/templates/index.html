@@ -15,7 +15,7 @@
   </form>
   <ul>
   {% for board in boards %}
-    <li class="list-group-item">{{ board.name }}</li>
+    <li class="list-group-item" ><a href="{% url 'board_detail' board.id %}">{{ board.name }}</a></li>
   {% endfor %}</ul>
 </div>
 </body>
