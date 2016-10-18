@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from django.shortcuts import render, get_object_or_404
+=======
+from django.shortcuts import render
+>>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
 from .serializers import BoardSerializer, CategorySerializer, CardSerializer
 from rest_framework import viewsets
 from django.contrib.auth.decorators import login_required
@@ -29,12 +33,15 @@ class BoardViewSet(viewsets.ModelViewSet):
     serializer_class = BoardSerializer
     queryset = Board.objects.all()
 
+<<<<<<< HEAD
     # def get_queryset(self):
     #     user =self.request.user
     #     queryset = Board.objects.all()
     #     return queryset
 
 
+=======
+>>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
 
 class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
@@ -45,6 +52,7 @@ class CardViewSet(viewsets.ModelViewSet):
     serializer_class = CardSerializer
     queryset = Card.objects.all()
 
+<<<<<<< HEAD
 # wells = Well.objects.all()
 #     well = get_object_or_404(Well, id=well_id)
 #     total_use = HourlyUsage.objects.filter(
@@ -67,3 +75,8 @@ def board_detail(request, board_id):
         # 'categories': categories,
     }
     return render(request, 'board_detail.html', context)
+=======
+
+def board(request):
+    pass
+>>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603

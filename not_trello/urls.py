@@ -16,7 +16,11 @@ urlpatterns = [
     url(r'^$', login, name='login'),
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout, {'next_page': '/login'}, name='logout'),
+<<<<<<< HEAD
     url(r'^board/(?P<board_id>[0-9]+)', views.board_detail, name='board_detail')
+=======
+    url(r'^board/(?P<pk>[0-9]+)', views.board, name='board')
+>>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
     ]
 
 # url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
