@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from django.shortcuts import render, get_object_or_404
-=======
-from django.shortcuts import render
->>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
 from .serializers import BoardSerializer, CategorySerializer, CardSerializer
 from rest_framework import viewsets
 from django.contrib.auth.decorators import login_required
@@ -15,8 +11,8 @@ def index(request):
     user = request.user
 
     if request.POST:
-        board_name = request.POST.get('board-name', '')
-        board = Board(name=board_name)
+        board_title = request.POST.get('board-title', '')
+        board = Board(title=board_title)
         board.save()
         board.user.add(user)
         board.save()
@@ -33,15 +29,11 @@ class BoardViewSet(viewsets.ModelViewSet):
     serializer_class = BoardSerializer
     queryset = Board.objects.all()
 
-<<<<<<< HEAD
     # def get_queryset(self):
     #     user =self.request.user
     #     queryset = Board.objects.all()
     #     return queryset
 
-
-=======
->>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
 
 class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
@@ -52,31 +44,31 @@ class CardViewSet(viewsets.ModelViewSet):
     serializer_class = CardSerializer
     queryset = Card.objects.all()
 
-<<<<<<< HEAD
+
 # wells = Well.objects.all()
 #     well = get_object_or_404(Well, id=well_id)
 #     total_use = HourlyUsage.objects.filter(
 #                             well_id=well.id).aggregate(sum=Sum('usage_count'))
 
 def board_detail(request, board_id):
-    boards = get_object_or_404(Board, id=board_id)
+
     # user = request.user
     # boards = Board.objects.filter(user=user)
 
-    # if request.POST:
-    #     category_name = request.POST.get('category_name', '')
-    #     if category_name:
-    #         category = Category(name=category_name, boards=boards)
-    #         category.save()
 
-    # categories = Board.objects.get(boards)
+    if request.POST:
+        category_name = request.POST.get('category-name', '')
+        category = Category(name=category_name, board_id=board_id)
+        category.save()
+        # category.add(user)
+        # category.save()
+    boards = get_object_or_404(Board, id=board_id)
+    try:
+        categories = boards.categories_set.all()
+    except:
+            categories = None
     context = {
         'boards': boards,
-        # 'categories': categories,
+        'categories': categories,
     }
     return render(request, 'board_detail.html', context)
-=======
-
-def board(request):
-    pass
->>>>>>> 29e68196d9f02d5ffaef9e49675ff541f5f1e603
