@@ -51,24 +51,19 @@ class CardViewSet(viewsets.ModelViewSet):
 #                             well_id=well.id).aggregate(sum=Sum('usage_count'))
 
 def board_detail(request, board_id):
-
-    # user = request.user
-    # boards = Board.objects.filter(user=user)
-
-
+    board = get_object_or_404(Board, id=board_id)
     if request.POST:
         category_name = request.POST.get('category-name', '')
         category = Category(name=category_name, board_id=board_id)
         category.save()
-        # category.add(user)
-        # category.save()
-    boards = get_object_or_404(Board, id=board_id)
+
     try:
-        categories = boards.categories_set.all()
+        categories = board.category_set.all()
     except:
-            categories = None
+        categories = None
+
     context = {
-        'boards': boards,
+        'board': board,
         'categories': categories,
     }
     return render(request, 'board_detail.html', context)

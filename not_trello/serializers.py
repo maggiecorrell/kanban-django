@@ -22,4 +22,4 @@ class BoardSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Board
-        fields = ('id', 'name', 'user', 'categories_set', 'cards_set')
+        fields = ('id', 'title', 'user', 'categories_set', 'cards_set')
